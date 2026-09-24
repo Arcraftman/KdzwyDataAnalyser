@@ -8,3 +8,7 @@ runtime/
 http_sessions/
 dist/
 .pytest-tmp/
+cpp/build/
+.vs/
+cpp/out/
+node_modules/

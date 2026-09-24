@@ -1,8 +1,25 @@
 # DataAnalyser
 
-独立的账无忧 Excel 财务数据看板项目。生成 22 张工作表的空白模板，在 Windows 桌面 Excel 中安装刷新宏，通过本机只读服务读取已授权账套，并可生成 DeepSeek 图表解读。项目运行不依赖 ReceiptUploader 包。
+账无忧财务数据分析项目。仓库根目录包含 Electron 桌面客户端、Python 只读服务、独立的 C++ 迁移模块和旧 Excel 客户端。各部分职责见 [项目边界](docs/ARCHITECTURE.md)。
 
-## Windows 安装
+## Electron 桌面客户端
+
+在 Windows 上安装 Node.js 22.12+（包含 npm）和 Python 3.10+，然后在本项目根目录运行：
+
+```powershell
+.\scripts\setup-local.ps1
+npm install
+npm run desktop
+```
+
+打开客户端后，点击“登录账无忧”，在弹出的登录窗口完成验证；返回客户端选择账套和月份，点击“刷新数据”。如果已有有效会话而本地服务未运行，点击“启动本地服务”。
+
+当前桌面版显示财务总览、月度趋势及 11 张受管原始数据表。它通过本机 JSON 接口读取现有只读服务，不运行 VBA。预算和账龄人工录入、六张图表的 DeepSeek 解读、年度及研发专用报表尚未迁入桌面界面；这些功能仍在现有 Excel 客户端中。C++ 核心位于 `cpp/`，目前未接入桌面版。
+
+会话和本地访问令牌仅保存在 `http_sessions/`、`runtime/`。Electron 渲染进程只接收已筛选的账套列表和报表数据；主进程只读取调用本地服务所需的访问令牌。
+
+## Excel 客户端
+### Windows 安装
 
 在本目录打开 PowerShell：
 

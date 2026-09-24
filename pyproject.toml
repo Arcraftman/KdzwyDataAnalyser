@@ -17,10 +17,10 @@ dev = ["pytest>=8,<10"]
 data-analyser = "data_analyser.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["python"]
 
 [tool.setuptools.package-data]
 data_analyser = ["template_layout.json", "rd_template.xlsx"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["python"]
