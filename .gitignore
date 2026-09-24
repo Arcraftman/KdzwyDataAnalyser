@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+excel/*.xlsx
+excel/*.xlsm
+runtime/
+http_sessions/
+dist/
+.pytest-tmp/
