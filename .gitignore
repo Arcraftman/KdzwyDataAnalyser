@@ -12,3 +12,4 @@ cpp/build/
 .vs/
 cpp/out/
 node_modules/
+build/

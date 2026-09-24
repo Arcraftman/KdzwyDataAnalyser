@@ -1,2 +1,0 @@
-D:/KdzwyDataAnalyser/build/CMakeFiles/ALL_BUILD.dir
-D:/KdzwyDataAnalyser/build/CMakeFiles/ZERO_CHECK.dir
